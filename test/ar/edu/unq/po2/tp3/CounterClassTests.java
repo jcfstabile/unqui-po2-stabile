@@ -33,6 +33,10 @@ class CounterTest{
         assertEquals(9, counter.getOddOcurrences());
     }
     @Test
+    void testMultipleOfThree(){
+        assertEquals(2, counter.getMultiplesOf_Ocurrences(3));
+    }
+    @Test
     void thereAreTenNumbers(){
         assertEquals(10, counter.getCount());
     }
