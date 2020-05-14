@@ -10,7 +10,7 @@ class CajaTest{
     @Test
     void hayUnaCajaEnCero(){
         Stock stock = new Stock();
-        Caja caja   = new Caja(stock);
+        Caja caja   = new Caja();
 
         assertEquals(0.0d, caja.montoTotal());
     }
@@ -18,7 +18,7 @@ class CajaTest{
     @Test
     void hayUnaCajaQueRegistraDosManzanasTradicionalesDeDocePesosYDaUnTotalDeVeinticuatroPesos(){
         Stock stock      = new Stock();
-        Caja caja        = new Caja(stock);
+        Caja caja        = new Caja();
         Producto manzana = new Tradicional(12.0d);
         stock.agregarProducto(manzana,2);
 
@@ -30,7 +30,7 @@ class CajaTest{
     @Test
     void hayUnaCajaQueRegistraTresManzanasTradicionalesYCincoAjosDeCooperativaSumaSesentaYUnPesos(){
         Stock stock      = new Stock();
-        Caja caja        = new Caja(stock);
+        Caja caja        = new Caja();
         Producto manzana = new Tradicional(12.0d);
         Producto ajo     = new DeCooperativa(6.0d);
         stock.agregarProducto(manzana,3);

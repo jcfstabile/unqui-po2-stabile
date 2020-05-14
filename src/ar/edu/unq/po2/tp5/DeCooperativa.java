@@ -10,7 +10,7 @@ public class DeCooperativa extends Producto
         super(precio);
     }
 
-    public Double precioFinal()
+    public Double montoAPagar()
     {
         return this.precioConDescuento();
     }

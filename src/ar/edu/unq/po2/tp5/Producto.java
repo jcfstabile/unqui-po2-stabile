@@ -1,10 +1,10 @@
 package ar.edu.unq.po2.tp5;
 
 
-
-public abstract class Producto
+public abstract class Producto implements Cobrable
 {
     private Double precio;
+    private Stock stock;
 
     Producto(Double precio){
         super();
@@ -19,5 +19,21 @@ public abstract class Producto
         this.precio = precio;
     }
     
-    public abstract Double precioFinal();
+    public abstract Double montoAPagar();
+
+    public void registrarPago(){
+        this.getStock().decrementarExistenciaDe(this);
+    }
+    
+    public void asociarStock(Stock stock){
+        this.setStock(stock);
+    }
+
+    private void setStock(Stock stock){
+        this.stock = stock;
+    }
+
+    private Stock getStock(){
+        return this.stock;
+    }
 }

@@ -2,26 +2,16 @@ package ar.edu.unq.po2.tp5;
 
 public class Caja
 {
-    private Stock stock;
     private Double montoTotal;
 
-    public Caja(Stock stock)
+    public Caja()
     {
-        this.setStock(stock);
         this.setMontoTotal(0d);
     }
 
-    private Stock getStock(){
-        return this.stock;
-    }
-    
-    private void setStock(Stock stock){
-        this.stock = stock;
-    }
-
-    public void registrar(Producto producto){
-        this.setMontoTotal(this.getMontoTotal() + producto.precioFinal());
-        this.getStock().decrementarExistenciaDe(producto);
+    public void registrar(Cobrable cobrable){
+        this.setMontoTotal(this.getMontoTotal() + cobrable.montoAPagar());
+        cobrable.registrarPago();
     }
 
     private Double getMontoTotal(){

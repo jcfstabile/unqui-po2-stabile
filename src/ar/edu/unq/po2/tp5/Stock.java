@@ -11,12 +11,13 @@ public class Stock
         productos = new HashMap<>();
     }
 
-    public Map<Producto, Integer> getProductos() {
+    protected Map<Producto, Integer> getProductos() {
         return this.productos;
     }
 
     public void agregarProducto(Producto producto, Integer cantidad){
         this.productos.put(producto, cantidad);
+        producto.asociarStock(this);
     }
 
     public void decrementarExistenciaDe ( Producto producto )
